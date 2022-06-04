@@ -19,7 +19,7 @@ const Home: NextPage = ({ posts }: { posts?: any }) => {
 
             <main className={styles.main}>
                 <p className={styles.description}>
-                    Hi, I'm Andrea. I currently work at{" "}
+                    Hi, I&apos;m Andrea. I currently work at{" "}
                     <a href="https://igloo.ooo">Igloo</a> and write about math
                     and programming when inspiration strikes.
                 </p>
