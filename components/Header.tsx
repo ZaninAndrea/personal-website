@@ -7,12 +7,15 @@ const Header: FC = ({}) => {
     return (
         <div className={styles.container}>
             <div className={styles.logo}>
-                <Image
-                    src="/logo.png"
-                    width="32"
-                    height="32"
-                    layout="responsive"
-                />
+                <Link href="/">
+                    <Image
+                        style={{ cursor: "pointer" }}
+                        src="/logo.png"
+                        width="32"
+                        height="32"
+                        layout="responsive"
+                    />
+                </Link>
             </div>
             <div className={styles.links}>
                 <Link href="/articles">

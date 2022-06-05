@@ -48,6 +48,27 @@ const Home: NextPage = ({ posts }: { posts?: any }) => {
                 </colgroup>
                 <tbody>
                     <tr className={styles.header}>
+                        <td className={styles.headerTitle}>DEEP DIVES</td>
+                        <td className={styles.headerLine}>
+                            <span></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td className={styles.headerLine}>
+                            <p className={styles.deepDive}>
+                                Mathematical Tools for Privacy and Trust
+                            </p>
+                            <p className={styles.deepDive}>
+                                A Primer on Statistics
+                            </p>
+                            <p className={styles.deepDive}>
+                                Algorithms and Data Structures for playing chess
+                            </p>
+                        </td>
+                    </tr>
+                    <tr className={styles.header}>
                         <td className={styles.headerTitle}>ARTICLES</td>
                         <td className={styles.headerLine}>
                             <span></span>
@@ -68,26 +89,13 @@ const Home: NextPage = ({ posts }: { posts?: any }) => {
                                     </Link>
                                 </p>
                             ))}
-                        </td>
-                    </tr>
-                    <tr className={styles.header}>
-                        <td className={styles.headerTitle}>DEEP DIVES</td>
-                        <td className={styles.headerLine}>
-                            <span></span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td></td>
-                        <td className={styles.headerLine}>
-                            <p className={styles.deepDive}>
-                                Mathematical Tools for Privacy and Trust
-                            </p>
-                            <p className={styles.deepDive}>
-                                A Primer on Statistics
-                            </p>
-                            <p className={styles.deepDive}>
-                                Algorithms and Data Structures for playing chess
+                            <p
+                                key="!see-all-articles"
+                                className={styles.seeAllPosts}
+                            >
+                                <Link href={`/blog`}>
+                                    <a>See all articles</a>
+                                </Link>
                             </p>
                         </td>
                     </tr>

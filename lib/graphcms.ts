@@ -24,23 +24,6 @@ async function fetchAPI(query: string, variables: GraphQLVariables = {}) {
     return json.data
 }
 
-export async function getPreviewPostBySlug(slug: string) {
-    const data = await fetchAPI(
-        `
-    query PostBySlug($slug: String!, $stage: Stage!) {
-      post(where: {slug: $slug}, stage: $stage) {
-        slug
-      }
-    }`,
-        {
-            stage: "DRAFT",
-            slug,
-        }
-    )
-
-    return data.post
-}
-
 export async function getAllPostsWithSlug() {
     const data = await fetchAPI(`
     {
@@ -56,7 +39,7 @@ export async function getAllPostsForHome(preview: boolean) {
     const data = await fetchAPI(
         `
     {
-      posts(orderBy: publishedAt_DESC, first: 20) {
+      posts(orderBy: publishedAt_DESC, first: 3) {
         title
         slug
         series

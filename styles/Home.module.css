@@ -43,6 +43,7 @@
 .postTitle {
     font-size: 20px;
     display: inline-block;
+    line-height: 24px;
 }
 
 .postDate {
@@ -57,12 +58,23 @@
     text-align: right;
     flex-shrink: 0;
     flex-grow: 0;
+    line-height: 26px;
 }
 
 .deepDive {
     font-size: 20px;
     margin-left: 186px;
     padding-right: 16px;
+    line-height: 26px;
+}
+
+.seeAllPosts {
+    font-size: 20px;
+    line-height: 24px;
+    width: 200px;
+    text-align: center;
+    color: var(--gray);
+    margin-left: calc(344px);
 }
 
 @media only screen and (max-width: 1000px) {
@@ -72,6 +84,10 @@
 
     .deepDive {
         margin-left: calc(50vw - 200px - 112px);
+    }
+
+    .seeAllPosts {
+        margin-left: calc(50vw - 100px - 112px);
     }
 }
 
