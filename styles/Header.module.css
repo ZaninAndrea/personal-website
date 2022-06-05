@@ -6,6 +6,7 @@
     grid-template-areas: "logo title links";
     padding: 16px;
     position: sticky;
+    top: 0;
     width: 100vw;
 }
 

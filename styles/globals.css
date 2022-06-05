@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,700;1,200;1,300;1,400;1,500;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css");
 
 html,
 body {
@@ -10,6 +11,7 @@ body {
     letter-spacing: 0.03em;
     --primary-color: #cc304c;
     --gray: #85828c;
+    --text-color: rgb(0, 17, 26);
 }
 
 code,
@@ -32,4 +34,11 @@ a {
 
 * {
     box-sizing: border-box;
+}
+
+.katex {
+    font-size: 1em;
+}
+.katex-display .katex {
+    font-size: 1.1em;
 }

@@ -1,5 +1,5 @@
 interface GraphQLVariables {
-    [key: string]: string
+    [key: string]: any
 }
 
 async function fetchAPI(query: string, variables: GraphQLVariables = {}) {
@@ -35,11 +35,11 @@ export async function getAllPostsWithSlug() {
     return data.posts
 }
 
-export async function getAllPostsForHome(preview: boolean) {
+export async function getAllPosts(count: number, preview: boolean) {
     const data = await fetchAPI(
         `
-    {
-      posts(orderBy: publishedAt_DESC, first: 3) {
+    query Posts($count: Int!) {
+      posts(orderBy: publishedAt_DESC, first: $count) {
         title
         slug
         series
@@ -50,7 +50,7 @@ export async function getAllPostsForHome(preview: boolean) {
       }
     }
   `,
-        {}
+        { count }
     )
 
     return data.posts

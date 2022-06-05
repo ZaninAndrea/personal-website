@@ -4,6 +4,7 @@ import Image from "next/image"
 import { getAllPostsWithSlug, getPost } from "../../lib/graphcms"
 import Markdown from "../../components/Markdown"
 import PageLayout from "../../components/PageLayout"
+import styles from "../../styles/Article.module.css"
 
 type PostProps = {
     preview: boolean
@@ -12,8 +13,9 @@ type PostProps = {
 
 const Post: NextPage<PostProps> = ({ post }) => {
     return (
-        <PageLayout title={post.title}>
-            <Markdown source={post.content} />
+        <PageLayout title={"Baida | " + post.title}>
+            <h1 className={styles.articleTitle}>{post.title}</h1>
+            <Markdown source={post.content} className={styles.articleBody} />
         </PageLayout>
     )
 }

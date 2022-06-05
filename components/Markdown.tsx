@@ -13,9 +13,10 @@ import MarkdownContainer from "markdown-it-container"
 
 type MarkdownProps = {
     source: string
+    className?: string
 }
 
-const Markdown: FC<MarkdownProps> = ({ source }) => {
+const Markdown: FC<MarkdownProps> = ({ source, className }) => {
     const mdRendered = new MarkdownIt({
         html: true,
     })
@@ -84,7 +85,9 @@ const Markdown: FC<MarkdownProps> = ({ source }) => {
 
     return (
         <div
-            className="markdown-body"
+            className={
+                className ? "markdown-body " + className : "markdown-body"
+            }
             dangerouslySetInnerHTML={{ __html: result }}
         ></div>
     )

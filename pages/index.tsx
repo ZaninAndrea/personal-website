@@ -2,7 +2,7 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
-import { getAllPostsForHome } from "../lib/graphcms"
+import { getAllPosts } from "../lib/graphcms"
 import PageLayout from "../components/PageLayout"
 import styles from "../styles/Home.module.css"
 
@@ -81,7 +81,7 @@ const Home: NextPage = ({ posts }: { posts?: any }) => {
                                     <span className={styles.postDate}>
                                         {prettifyDate(post.date)}
                                     </span>
-                                    <Link href={`/blog/${post.slug}`}>
+                                    <Link href={`/articles/${post.slug}`}>
                                         <a className={styles.postTitle}>
                                             {post.title}
                                         </a>
@@ -92,7 +92,7 @@ const Home: NextPage = ({ posts }: { posts?: any }) => {
                                 key="!see-all-articles"
                                 className={styles.seeAllPosts}
                             >
-                                <Link href={`/blog`}>
+                                <Link href={`/articles`}>
                                     <a>See all articles</a>
                                 </Link>
                             </p>
@@ -105,7 +105,7 @@ const Home: NextPage = ({ posts }: { posts?: any }) => {
 }
 
 export async function getStaticProps({ preview = false }) {
-    const posts = (await getAllPostsForHome(preview)) || []
+    const posts = (await getAllPosts(3, preview)) || []
     return {
         props: { posts, preview },
     }
