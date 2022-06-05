@@ -55,8 +55,7 @@ const Home: NextPage = ({ posts }: { posts?: any }) => {
                     </tr>
 
                     <tr>
-                        <td></td>
-                        <td className={styles.headerLine}>
+                        <td className={styles.deepDiveBlock} colSpan={2}>
                             <p className={styles.deepDive}>
                                 Mathematical Tools for Privacy and Trust
                             </p>

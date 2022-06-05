@@ -27,3 +27,28 @@
     line-height: 64px;
     font-size: 22px;
 }
+
+@media only screen and (max-width: 672px) {
+    .logo {
+        width: 32px;
+        height: 32px;
+        margin: 8px;
+    }
+
+    .link {
+        margin: 12px;
+        line-height: 48px;
+        font-size: 20px;
+    }
+
+    .container {
+        height: 64px;
+        background: white;
+        display: grid;
+        grid-template-columns: 48px 1fr auto;
+        grid-template-areas: "logo title links";
+        padding: 8px;
+        position: sticky;
+        width: 100vw;
+    }
+}

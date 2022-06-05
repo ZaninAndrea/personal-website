@@ -63,7 +63,7 @@
 
 .deepDive {
     font-size: 20px;
-    margin-left: 186px;
+    margin-left: 299px;
     padding-right: 16px;
     line-height: 26px;
 }
@@ -83,7 +83,7 @@
     }
 
     .deepDive {
-        margin-left: calc(50vw - 200px - 112px);
+        margin-left: calc(50vw - 200px);
     }
 
     .seeAllPosts {
@@ -95,7 +95,8 @@
     .postDate {
         margin-left: -76px;
     }
-
+}
+@media only screen and (max-width: 448px) {
     .deepDive {
         margin-left: 24px;
     }
