@@ -43,7 +43,7 @@ const Home: NextPage = ({ posts }: { posts?: any }) => {
 
             <table className={styles.contentList}>
                 <colgroup>
-                    <col style={{ width: "112px" }} />
+                    <col style={{ width: "124px" }} />
                     <col style={{ width: "auto" }} />
                 </colgroup>
                 <tbody>

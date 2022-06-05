@@ -1,9 +1,11 @@
 .presentation {
-    max-width: 400px;
+    max-width: 448px;
     margin: auto;
     font-size: 22px;
     margin-bottom: 96px;
     margin-top: 64px;
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
 .highlightedText {
@@ -24,6 +26,7 @@
     font-size: 20px;
     width: fit-content;
     text-align: right;
+    padding-left: 12px;
 }
 
 .headerLine span {
@@ -34,6 +37,7 @@
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 24px;
+    margin-right: 12px;
 }
 
 .post {
@@ -53,7 +57,7 @@
     font-weight: bold;
     font-size: 18px;
     width: 100px;
-    margin-left: 86px;
+    margin-left: 74px;
     padding-right: 16px;
     text-align: right;
     flex-shrink: 0;
@@ -74,12 +78,12 @@
     width: 200px;
     text-align: center;
     color: var(--gray);
-    margin-left: calc(344px);
+    margin-left: calc(270px);
 }
 
 @media only screen and (max-width: 1000px) {
     .postDate {
-        margin-left: calc(50vw - 200px - 112px - 100px);
+        margin-left: calc(50vw - 200px - 124px - 100px);
     }
 
     .deepDive {
@@ -87,17 +91,19 @@
     }
 
     .seeAllPosts {
-        margin-left: calc(50vw - 100px - 112px);
+        margin-left: calc(50vw - 100px - 124px);
+    }
+    .headerLine span {
+        margin-left: 12px;
     }
 }
 
 @media only screen and (max-width: 672px) {
     .postDate {
-        margin-left: -76px;
+        margin-left: -112px;
     }
-}
-@media only screen and (max-width: 448px) {
+
     .deepDive {
-        margin-left: 24px;
+        margin-left: 12px;
     }
 }

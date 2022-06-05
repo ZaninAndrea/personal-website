@@ -24,8 +24,8 @@ const Header: FC = ({}) => {
                 <Link href="/deep-dives">
                     <a className={styles.link}>Deep dives</a>
                 </Link>
-                <Link href="/projects">
-                    <a className={styles.link}>Projects</a>
+                <Link href="/about-me">
+                    <a className={styles.link}>About me</a>
                 </Link>
             </div>
         </div>
