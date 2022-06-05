@@ -22,14 +22,10 @@ const Header: FC = ({}) => {
                     <a className={styles.link}>Articles</a>
                 </Link>
                 <Link href="/deep-dives">
-                    <a className={styles.link} href="/articles">
-                        Deep dives
-                    </a>
+                    <a className={styles.link}>Deep dives</a>
                 </Link>
                 <Link href="/projects">
-                    <a className={styles.link} href="/articles">
-                        Projects
-                    </a>
+                    <a className={styles.link}>Projects</a>
                 </Link>
             </div>
         </div>
