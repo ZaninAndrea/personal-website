@@ -2,7 +2,7 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
-import { getAllPosts } from "../lib/graphcms"
+import { getLatestPosts } from "../lib/graphcms"
 import PageLayout from "../components/PageLayout"
 import styles from "../styles/Home.module.css"
 
@@ -105,7 +105,7 @@ const Home: NextPage = ({ posts }: { posts?: any }) => {
 }
 
 export async function getStaticProps({ preview = false }) {
-    const posts = (await getAllPosts(3, preview)) || []
+    const posts = (await getLatestPosts(3, preview)) || []
     return {
         props: { posts, preview },
     }

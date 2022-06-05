@@ -1,0 +1,26 @@
+.postTitle {
+    font-size: 20px;
+    display: inline-block;
+    line-height: 24px;
+}
+
+.postDate {
+    display: inline-block;
+    font-family: "Karla", sans-serif;
+    color: var(--gray);
+    font-weight: bold;
+    font-size: 18px;
+    width: 100px;
+    margin-left: 86px;
+    padding-right: 16px;
+    text-align: right;
+    flex-shrink: 0;
+    flex-grow: 0;
+    line-height: 26px;
+}
+
+.postList {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 64px;
+}

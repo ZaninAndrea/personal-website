@@ -35,7 +35,7 @@ export async function getAllPostsWithSlug() {
     return data.posts
 }
 
-export async function getAllPosts(count: number, preview: boolean) {
+export async function getLatestPosts(count: number, preview: boolean) {
     const data = await fetchAPI(
         `
     query Posts($count: Int!) {
@@ -51,6 +51,26 @@ export async function getAllPosts(count: number, preview: boolean) {
     }
   `,
         { count }
+    )
+
+    return data.posts
+}
+export async function getAllPosts(preview: boolean) {
+    const data = await fetchAPI(
+        `
+    {
+      posts(orderBy: publishedAt_DESC) {
+        title
+        slug
+        series
+        date
+        thumbnail {
+          url(transformation: {image: {resize: {fit: crop, width: 2000, height: 1000}}})
+        }
+      }
+    }
+  `,
+        {}
     )
 
     return data.posts

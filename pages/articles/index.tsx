@@ -30,22 +30,24 @@ function prettifyDate(rawDate: string): string {
 const Home: NextPage = ({ posts }: { posts?: any }) => {
     return (
         <PageLayout title="Baida">
-            {posts.map((post: any) => (
-                <p key={post.slug} className={styles.post}>
-                    <span className={styles.postDate}>
-                        {prettifyDate(post.date)}
-                    </span>
-                    <Link href={`/articles/${post.slug}`}>
-                        <a className={styles.postTitle}>{post.title}</a>
-                    </Link>
-                </p>
-            ))}
+            <div className={styles.postList}>
+                {posts.map((post: any) => (
+                    <p key={post.slug} className={styles.post}>
+                        <span className={styles.postDate}>
+                            {prettifyDate(post.date)}
+                        </span>
+                        <Link href={`/articles/${post.slug}`}>
+                            <a className={styles.postTitle}>{post.title}</a>
+                        </Link>
+                    </p>
+                ))}
+            </div>
         </PageLayout>
     )
 }
 
 export async function getStaticProps({ preview = false }) {
-    const posts = (await getAllPosts(20, preview)) || []
+    const posts = (await getAllPosts(preview)) || []
     return {
         props: { posts, preview },
     }
