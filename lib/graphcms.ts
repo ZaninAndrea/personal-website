@@ -39,7 +39,7 @@ export async function getLatestPosts(count: number, preview: boolean) {
     const data = await fetchAPI(
         `
     query Posts($count: Int!) {
-      posts(orderBy: publishedAt_DESC, first: $count) {
+      posts(orderBy: date_DESC, first: $count) {
         title
         slug
         series
@@ -59,7 +59,7 @@ export async function getAllPosts(preview: boolean) {
     const data = await fetchAPI(
         `
     {
-      posts(orderBy: publishedAt_DESC) {
+      posts(orderBy: date_DESC) {
         title
         slug
         series
