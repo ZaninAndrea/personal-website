@@ -4,6 +4,7 @@ import MarkdownIt from "markdown-it"
 import MarkdownKatex from "../lib/markdown-it-katex"
 import MarkdownMark from "markdown-it-mark"
 import MarkdownContainer from "markdown-it-container"
+import MarkdownHighlight from "markdown-it-highlightjs"
 // import HtmlToReact from "html-to-react"
 
 // const HtmlToReactParser = HtmlToReact.Parser()
@@ -20,6 +21,7 @@ const Markdown: FC<MarkdownProps> = ({ source, className }) => {
     const mdRendered = new MarkdownIt({
         html: true,
     })
+    mdRendered.use(MarkdownHighlight)
     mdRendered.use(MarkdownKatex, {
         throwOnError: false,
         errorColor: " #cc0000",

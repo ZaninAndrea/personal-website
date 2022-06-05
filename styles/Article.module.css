@@ -47,3 +47,8 @@
 .articleBody pre {
     overflow: auto;
 }
+
+.articleBody img {
+    max-width: 100%;
+    padding: 16px;
+}
