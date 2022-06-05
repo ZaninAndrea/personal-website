@@ -1,0 +1,29 @@
+.container {
+    height: 80px;
+    background: white;
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    grid-template-areas: "logo title links";
+    padding: 16px;
+    position: sticky;
+    width: 100vw;
+}
+
+.logo {
+    grid-area: logo;
+    text-align: left;
+    width: 48px;
+    height: 48px;
+    margin: 8px;
+}
+
+.links {
+    grid-area: links;
+    text-align: right;
+}
+
+.link {
+    margin: 16px;
+    line-height: 64px;
+    font-size: 22px;
+}

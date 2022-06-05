@@ -60,7 +60,7 @@ export async function getAllPostsForHome(preview: boolean) {
         title
         slug
         series
-        publishedAt
+        date
         thumbnail {
           url(transformation: {image: {resize: {fit: crop, width: 2000, height: 1000}}})
         }
@@ -81,9 +81,7 @@ export async function getPost(slug: string, preview: boolean) {
         title
         slug
         series
-        content {
-          html
-        }
+        content
       }
     }
   `,

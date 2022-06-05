@@ -1,8 +1,9 @@
 import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
-import styles from "../../styles/Home.module.css"
 import { getAllPostsWithSlug, getPost } from "../../lib/graphcms"
+import Markdown from "../../components/Markdown"
+import PageLayout from "../../components/PageLayout"
 
 type PostProps = {
     preview: boolean
@@ -11,22 +12,9 @@ type PostProps = {
 
 const Post: NextPage<PostProps> = ({ post }) => {
     return (
-        <div className={styles.container}>
-            <Head>
-                <title>Baida</title>
-                <meta
-                    name="description"
-                    content="Personal website of Andrea Zanin"
-                />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-
-            <main className={styles.main}>
-                <h1 className={styles.title}>{post.title}</h1>
-
-                <div dangerouslySetInnerHTML={{ __html: post.content.html }} />
-            </main>
-        </div>
+        <PageLayout title={post.title}>
+            <Markdown source={post.content} />
+        </PageLayout>
     )
 }
 
