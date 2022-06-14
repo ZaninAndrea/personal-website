@@ -57,13 +57,24 @@ const Home: NextPage = ({ posts }: { posts?: any }) => {
                     <tr>
                         <td className={styles.deepDiveBlock} colSpan={2}>
                             <p className={styles.deepDive}>
-                                Mathematical Tools for Privacy and Trust
+                                Mathematical Tools for Privacy and Trust (coming
+                                soon)
                             </p>
                             <p className={styles.deepDive}>
-                                A Primer on Statistics
+                                <a
+                                    href="https://statistics.baida.dev"
+                                    target="_blank"
+                                >
+                                    A Primer on Statistics
+                                </a>
                             </p>
                             <p className={styles.deepDive}>
-                                Algorithms and Data Structures for playing chess
+                                <Link href="/chess-algorithms">
+                                    <a>
+                                        Algorithms and Data Structures to Play
+                                        Chess
+                                    </a>
+                                </Link>
                             </p>
                         </td>
                     </tr>

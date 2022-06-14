@@ -96,3 +96,34 @@ export async function getPost(slug: string, preview: boolean) {
 
     return data.post
 }
+
+type SideProjectLink = {
+    name: string
+    url: string
+}
+export type SideProject = {
+    description: string
+    date: string
+    name: string
+    starred: boolean
+    links: SideProjectLink[]
+}
+
+export async function getSideProjects(): Promise<SideProject[]> {
+    const data = await fetchAPI(`
+    {
+    projects {
+      description
+      date
+      name
+      starred
+      links {
+        name
+        url
+      }
+    }
+  }
+`)
+
+    return data.projects
+}

@@ -29,7 +29,7 @@ function prettifyDate(rawDate: string): string {
 
 const Home: NextPage = ({ posts }: { posts?: any }) => {
     return (
-        <PageLayout title="Baida">
+        <PageLayout title="Baida | Articles">
             <div className={styles.postList}>
                 {posts.map((post: any) => (
                     <p key={post.slug} className={styles.post}>

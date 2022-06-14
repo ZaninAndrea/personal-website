@@ -1,0 +1,15 @@
+.button {
+    border: 1px solid var(--primary-color);
+    padding: 8px;
+    margin: 16px 16px;
+    font-size: 20px;
+    color: var(--primary-color);
+    font-family: "Karla", sans-serif;
+    border-radius: 6px;
+}
+
+.button:hover {
+    color: white;
+    background: var(--primary-color);
+    text-decoration: none;
+}

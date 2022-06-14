@@ -1,0 +1,28 @@
+.sideProjectsList {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+
+    font-size: 22px;
+    line-height: 34px;
+    word-wrap: break-word;
+}
+.sideProjectsList h1 {
+    font-size: 1.5em;
+    color: #494c51;
+    margin-top: 48px;
+}
+
+.sideProject {
+    margin-top: 48px;
+}
+.links {
+    margin-top: 8px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+}
+.links a {
+    display: block;
+    color: var(--primary-color);
+}
