@@ -16,14 +16,16 @@ const AboutMe: NextPage = ({
         <PageLayout title="Baida | About Me">
             <div className={styles.sideProjectsList}>
                 <h1>My side-projects</h1>
-                {sideProjects?.map((project) => (
-                    <div className={styles.sideProject}>
+                {sideProjects?.map((project, i) => (
+                    <div className={styles.sideProject} key={i}>
                         <b>{project.name}</b>
                         <br /> {project.description}
                         <br />
                         <div className={styles.links}>
                             {project.links.map((link) => (
-                                <a href={link.url}>{link.name}</a>
+                                <a key={link.name} href={link.url}>
+                                    {link.name}
+                                </a>
                             ))}
                         </div>
                     </div>

@@ -65,6 +65,7 @@ const ChessAlgorithms: NextPage = ({ posts }: { posts?: any }) => {
                 </a>
                 <a
                     href="https://github.com/ZaninAndrea/chess_engine"
+                    rel="noreferrer"
                     target="_blank"
                     className={globalStyles.button}
                 >

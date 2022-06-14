@@ -63,6 +63,7 @@ const Home: NextPage = ({ posts }: { posts?: any }) => {
                             <p className={styles.deepDive}>
                                 <a
                                     href="https://statistics.baida.dev"
+                                    rel="noreferrer"
                                     target="_blank"
                                 >
                                     A Primer on Statistics
