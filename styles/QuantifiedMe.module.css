@@ -1,0 +1,15 @@
+.statsParagraph {
+    width: 100%;
+    max-width: 640px;
+
+    margin: auto;
+    font-size: 22px;
+    margin-bottom: 96px;
+    margin-top: 64px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.statsParagraph .highlight {
+    color: var(--primary-color);
+}
