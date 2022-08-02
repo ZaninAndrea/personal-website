@@ -21,10 +21,11 @@ const PageLayout: FC<PageLayoutProps> = ({ children, title }) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Script
+                id="gtag-1"
                 async
                 src="https://www.googletagmanager.com/gtag/js?id=G-E16B5L01EZ"
             ></Script>
-            <Script>
+            <Script id="gtag-2">
                 {`window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());

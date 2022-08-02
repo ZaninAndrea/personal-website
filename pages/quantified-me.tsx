@@ -41,7 +41,7 @@ const QuantifiedMe: NextPage = ({
             </div>
             <div className={styles.protectedLogIn}>
                 <i className="fa-solid fa-lock" style={{ fontSize: "18px" }} />{" "}
-                You don't have access to the protected content
+                You don&apos;t have access to the protected content
             </div>
         </PageLayout>
     )

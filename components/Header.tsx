@@ -9,6 +9,7 @@ const Header: FC = ({}) => {
             <div className={styles.logo}>
                 <Link href="/">
                     <Image
+                        alt="logo"
                         style={{ cursor: "pointer" }}
                         src="/logo.png"
                         width="32"
