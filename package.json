@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.9.2",
     "@types/katex": "^0.14.0",
     "@types/markdown-it": "^12.2.3",
     "@types/markdown-it-container": "^2.0.5",
+    "clone-deep": "^4.0.1",
     "html-to-react": "^1.4.8",
     "katex": "^0.15.6",
     "markdown-it": "^13.0.1",

@@ -1,0 +1,45 @@
+.title {
+    font-size: 39px;
+    color: var(--text-color);
+    text-align: center;
+    padding-bottom: 32px;
+    padding-top: 48px;
+    padding-left: 24px;
+    padding-right: 24px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.introduction {
+    max-width: 800px;
+    font-size: 22px;
+    line-height: 34px;
+    word-wrap: break-word;
+    padding: 16px 24px 4px 24px;
+    color: var(--text-color);
+    margin: auto;
+}
+
+.introduction a,
+.introduction b {
+    color: var(--primary-color) !important;
+}
+
+.postTitle {
+    font-size: 20px;
+    display: inline-block;
+    line-height: 24px;
+}
+
+.postList {
+    max-width: 800px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 64px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.post {
+    display: flex;
+}

@@ -39,6 +39,10 @@ const QuantifiedMe: NextPage = ({
             <div className={styles.statsParagraph}>
                 <HighlightedParagraph content={healthParagraph as Paragraph} />
             </div>
+            <div className={styles.protectedLogIn}>
+                <i className="fa-solid fa-lock" style={{ fontSize: "18px" }} />{" "}
+                You don't have access to the protected content
+            </div>
         </PageLayout>
     )
 }

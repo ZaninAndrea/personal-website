@@ -28,6 +28,7 @@ body {
     --green: rgb(106, 175, 83);
     --dark-green: #397300;
     --blue: #2688b9;
+    --gray: #aaa;
 }
 
 code,
@@ -78,4 +79,23 @@ a:hover {
 }
 .katex-display .katex {
     font-size: 1.1em;
+}
+
+dot {
+    display: inline-block;
+    background: red;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 0.5em;
+}
+dot.gray {
+    background: var(--gray);
+}
+
+dot.green {
+    background: var(--green);
+}
+
+dot.blue {
+    background: var(--blue);
 }

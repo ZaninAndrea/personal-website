@@ -57,8 +57,12 @@ const Home: NextPage = ({ posts }: { posts?: any }) => {
                     <tr>
                         <td className={styles.deepDiveBlock} colSpan={2}>
                             <p className={styles.deepDive}>
-                                Mathematical Tools for Privacy and Trust (coming
-                                soon)
+                                <Link href={`/distributed-algorithms`}>
+                                    <a>
+                                        An Interactive Exploration of
+                                        Distributed Algorithms
+                                    </a>
+                                </Link>
                             </p>
                             <p className={styles.deepDive}>
                                 <a
