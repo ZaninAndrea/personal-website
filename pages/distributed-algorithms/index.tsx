@@ -18,7 +18,7 @@ const Home: NextPage = () => {
                 <p>
                     In this collection you will find explanations and{" "}
                     <b>simulations</b> of several algorithms in the distributed
-                    computing space. The goal of this project is giving you a
+                    computing field. The goal of this project is giving you a
                     tool to play with these algorithms <b>hands on</b>, for this
                     reason I have focused on giving you a practical
                     understanding while ignoring some of the rigorous theory.

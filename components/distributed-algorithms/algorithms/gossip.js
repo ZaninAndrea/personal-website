@@ -36,7 +36,7 @@ export default function newNode(
                             <td key="value">
                                 <input
                                     className="node-field"
-                                    defaultValue={this.data.content}
+                                    value={this.data.content}
                                     onChange={(e) => {
                                         this.data.content = e.target.value
                                         this.data.timestamp =
