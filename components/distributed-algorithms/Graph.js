@@ -6,6 +6,8 @@ import AddCircleIcon from "@mui/icons-material/AddCircle"
 import PlayArrowIcon from "@mui/icons-material/PlayArrow"
 import PauseIcon from "@mui/icons-material/Pause"
 import RefreshIcon from "@mui/icons-material/Refresh"
+import HelpIcon from "@mui/icons-material/Help"
+import CloseIcon from "@mui/icons-material/Close"
 
 export default class Graph extends React.Component {
     state = {
@@ -16,9 +18,79 @@ export default class Graph extends React.Component {
         sourceNode: null,
         mouseX: 0,
         mouseY: 0,
+        tutorialOpen: false,
     }
 
     render() {
+        if (this.state.tutorialOpen) {
+            return (
+                <div className="playground-tutorial">
+                    <div className="playground-tutorial-header">
+                        <h3>Commands</h3>
+                        <IconButton
+                            aria-label="refresh"
+                            onClick={() =>
+                                this.setState({ tutorialOpen: false })
+                            }
+                            sx={{ color: "black" }}
+                            title="Close"
+                            key="close-button"
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <PlayArrowIcon />
+                                    <PauseIcon />
+                                </td>
+                                <td>Start and stop the simulation.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <RefreshIcon />
+                                </td>
+                                <td>
+                                    Reset the simulation to the initial state.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <PanToolIcon />
+                                </td>
+                                <td>
+                                    When enabled you can move around the various
+                                    nodes.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <AddCircleIcon />
+                                </td>
+                                <td>
+                                    When enabled you can drag the mouse from one
+                                    node to another while holding the left
+                                    button to create a new connection.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <DeleteIcon />
+                                </td>
+                                <td>
+                                    When enabled you can click on a node to
+                                    delete it or drag over a connection while
+                                    pressing the left button to cut it.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            )
+        }
+
         const nodeMap = {}
         for (let node of this.props.nodes) {
             nodeMap[node.id] = node.ui.position
@@ -51,6 +123,16 @@ export default class Graph extends React.Component {
                             title="Reset"
                         >
                             <RefreshIcon />
+                        </IconButton>
+                        <IconButton
+                            aria-label="refresh"
+                            onClick={() =>
+                                this.setState({ tutorialOpen: true })
+                            }
+                            sx={{ color: "black" }}
+                            title="Tutorial"
+                        >
+                            <HelpIcon />
                         </IconButton>
                     </div>
                     <div className="graph-tools">
