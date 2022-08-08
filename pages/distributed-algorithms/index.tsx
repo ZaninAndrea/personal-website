@@ -3,7 +3,10 @@ import Link from "next/link"
 import PageLayout from "../../components/PageLayout"
 import styles from "../../styles/DistributedAlgorithms.module.css"
 
-const posts: any[] = [{ slug: "leader-election", title: "Leader Election" }]
+const posts: any[] = [
+    { slug: "leader-election", title: "Leader Election" },
+    { slug: "gossip", title: "Gossip Protocols" },
+]
 
 const Home: NextPage = () => {
     return (

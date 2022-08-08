@@ -325,7 +325,9 @@ export default class Graph extends React.Component {
                                         />
                                     )}
                                     <div className="graph-node-content">
-                                        {node.getLabel()}
+                                        {node.getLabel(() =>
+                                            this.forceUpdate()
+                                        )}
                                     </div>
                                 </div>
                             </div>

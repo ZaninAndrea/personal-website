@@ -88,14 +88,23 @@ dot {
     height: 0.5em;
     border-radius: 0.5em;
 }
-dot.gray {
+square {
+    display: inline-block;
+    background: red;
+    width: 0.5em;
+    height: 0.5em;
+}
+dot.gray,
+square.gray {
     background: var(--gray);
 }
 
-dot.green {
+dot.green,
+square.green {
     background: var(--green);
 }
 
-dot.blue {
+dot.blue,
+square.blue {
     background: var(--blue);
 }

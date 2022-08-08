@@ -12,6 +12,7 @@ type PostProps = {
 
 const titleMap: { [slug: string]: string } = {
     "leader-election": "Leader Election",
+    gossip: "Gossip Protocols",
 }
 
 const AlgorithmPage: NextPage<PostProps> = ({ source, slug }) => {

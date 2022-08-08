@@ -109,3 +109,13 @@
     height: 100%;
     position: absolute;
 }
+
+input.node-field {
+    width: 80px;
+    border: none;
+    border-bottom: 1px solid gray;
+    border-radius: 0;
+}
+input.node-field:focus {
+    outline: none;
+}

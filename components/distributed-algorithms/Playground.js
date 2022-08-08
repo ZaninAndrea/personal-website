@@ -109,7 +109,7 @@ function updateSimulation({ packets, nodes, edges }, timeInterval, getId) {
     }
 
     for (let node of newNodes) {
-        node.loop(createActions(node), timeInterval, nodes)
+        node.loop(createActions(node), timeInterval, nodes, edges)
     }
 
     return {
@@ -137,7 +137,7 @@ class DistributedPlayground extends React.Component {
         this.state.packets = props.initialPackets
     }
 
-    getId = () => this.counter
+    getId = () => this.counter++
     resetId = () => {
         this.counter = 0
     }
