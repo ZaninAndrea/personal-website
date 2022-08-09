@@ -165,7 +165,6 @@ function gaussianPath({
     closed,
     MAX_Y,
 }) {
-    console.log(mu, sigma)
     if (sigma === undefined) sigma = 5
     if (mu === undefined) mu = 0
     if (closed === undefined) closed = true
@@ -472,7 +471,6 @@ class Playground1 extends React.Component {
                                     (this.state.mean * this.state.mean) /
                                     this.state.variance
 
-                                console.log(theta, k)
                                 const y =
                                     (1 /
                                         (mathjs.gamma(k) *

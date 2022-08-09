@@ -55,7 +55,6 @@ const Markdown: FC<MarkdownProps> = ({ source, className }) => {
             lastBlock = ""
 
             const Visualization = Visualizations[blockMatched[1]]
-            console.log(blockMatched[1])
             renderedBlocks.push(<Visualization />)
         } else {
             lastBlock += "\n" + line

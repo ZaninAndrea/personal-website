@@ -72,6 +72,7 @@ class Image1 extends React.Component {
             >
                 {[0, 1, 2, 3, 4, 5].map((id) => (
                     <rect
+                        key={id}
                         x={id * 50}
                         y="1"
                         width="49"
@@ -106,6 +107,7 @@ function Image2() {
         >
             {[0, 1, 2, 3, 4, 5].map((id) => (
                 <rect
+                    key={id}
                     x={id * 50}
                     y="1"
                     width="49"
@@ -171,6 +173,7 @@ class Image3 extends React.Component {
             >
                 {[0, 1, 2, 3, 4, 5].map((id) => (
                     <rect
+                        key={id}
                         x={id * 50}
                         y="1"
                         width="49"
@@ -189,6 +192,7 @@ class Image3 extends React.Component {
                     />
                 ))}
                 <rect
+                    key="border"
                     x={147}
                     y={-2}
                     width="155"
@@ -259,6 +263,7 @@ class Image4 extends React.Component {
                 {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map(
                     (id) => (
                         <rect
+                            key={id}
                             x={(id % 4) * 50}
                             y={Math.floor(id / 4) * 50}
                             width="44"
@@ -278,6 +283,7 @@ class Image4 extends React.Component {
                     )
                 )}
                 <rect
+                    key="border"
                     x={47}
                     y={47}
                     width="100"
