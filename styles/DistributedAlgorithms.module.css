@@ -35,11 +35,12 @@
     max-width: 800px;
     width: fit-content;
     margin: auto;
-    margin-top: 64px;
+    margin-top: 32px;
     padding-left: 24px;
     padding-right: 24px;
 }
 
 .post {
     display: flex;
+    font-size: 22px;
 }

@@ -1,6 +1,6 @@
-import DistributedPlayground from "../Playground"
-import newGossipNode from "../algorithms/gossip"
-import { fullyConnectedEdges } from "../utilities"
+import DistributedPlayground from "./components/Playground"
+import newGossipNode from "./algorithms/gossip"
+import { fullyConnectedEdges } from "./utilities"
 
 export default function GossipPush() {
     let counter = 0

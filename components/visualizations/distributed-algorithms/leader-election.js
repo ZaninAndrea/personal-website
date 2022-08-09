@@ -1,6 +1,6 @@
-import DistributedPlayground from "../Playground"
-import newLeaderElectionNode from "../algorithms/election"
-import { fullyConnectedEdges } from "../utilities"
+import DistributedPlayground from "./components/Playground"
+import newLeaderElectionNode from "./algorithms/election"
+import { fullyConnectedEdges } from "./utilities"
 
 export default function LeaderElection() {
     let counter = 0

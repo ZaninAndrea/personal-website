@@ -8,6 +8,7 @@ import PauseIcon from "@mui/icons-material/Pause"
 import RefreshIcon from "@mui/icons-material/Refresh"
 import HelpIcon from "@mui/icons-material/Help"
 import CloseIcon from "@mui/icons-material/Close"
+import styles from "./Graph.module.css"
 
 export default class Graph extends React.Component {
     state = {
@@ -24,8 +25,8 @@ export default class Graph extends React.Component {
     render() {
         if (this.state.tutorialOpen) {
             return (
-                <div className="playground-tutorial">
-                    <div className="playground-tutorial-header">
+                <div className={styles["playground-tutorial"]}>
+                    <div className={styles["playground-tutorial-header"]}>
                         <h3>Commands</h3>
                         <IconButton
                             aria-label="refresh"
@@ -102,8 +103,8 @@ export default class Graph extends React.Component {
 
         return (
             <>
-                <div className="graph-sidebar">
-                    <div className="graph-player">
+                <div className={styles["graph-sidebar"]}>
+                    <div className={styles["graph-player"]}>
                         <IconButton
                             aria-label="playpause"
                             onClick={this.props.onTogglePlaying}
@@ -135,7 +136,7 @@ export default class Graph extends React.Component {
                             <HelpIcon />
                         </IconButton>
                     </div>
-                    <div className="graph-tools">
+                    <div className={styles["graph-tools"]}>
                         <IconButton
                             aria-label="pan"
                             title="Drag"
@@ -184,12 +185,12 @@ export default class Graph extends React.Component {
                         </IconButton>
                     </div>
                 </div>
-                <div className="graph-container">
+                <div className={styles["graph-container"]}>
                     <div
                         ref={(el) => {
                             this.container = el
                         }}
-                        className="graph-main"
+                        className={styles["graph-main"]}
                         onMouseUp={(e) => {
                             if (this.state.draggingNode !== null) {
                                 this.setState({ draggingNode: null })
@@ -232,7 +233,7 @@ export default class Graph extends React.Component {
                     >
                         {this.props.nodes.map((node) => (
                             <div
-                                className="graph-node"
+                                className={styles["graph-node"]}
                                 style={{
                                     top: node.ui.position.y + "px",
                                     left: node.ui.position.x + "px",
@@ -240,7 +241,7 @@ export default class Graph extends React.Component {
                                 key={node.id}
                             >
                                 <div
-                                    className="graph-node-body"
+                                    className={styles["graph-node-body"]}
                                     style={{
                                         cursor:
                                             ["pan", "delete"].indexOf(
@@ -307,13 +308,15 @@ export default class Graph extends React.Component {
                                         }
                                     }}
                                 >
-                                    <div className="graph-node-title">
+                                    <div className={styles["graph-node-title"]}>
                                         {node.getTitle()}
                                     </div>
 
                                     {node.ui.timerSize !== null && (
                                         <div
-                                            className="graph-node-timer"
+                                            className={
+                                                styles["graph-node-timer"]
+                                            }
                                             style={{
                                                 background:
                                                     node.ui.timerColor ||
@@ -324,7 +327,9 @@ export default class Graph extends React.Component {
                                             }}
                                         />
                                     )}
-                                    <div className="graph-node-content">
+                                    <div
+                                        className={styles["graph-node-content"]}
+                                    >
                                         {node.getLabel(() =>
                                             this.forceUpdate()
                                         )}
@@ -332,7 +337,7 @@ export default class Graph extends React.Component {
                                 </div>
                             </div>
                         ))}
-                        <svg className="graph-svg">
+                        <svg className={styles["graph-svg"]}>
                             {this.state.sourceNode !== null && (
                                 <line
                                     x1={nodeMap[this.state.sourceNode].x}

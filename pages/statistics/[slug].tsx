@@ -10,8 +10,10 @@ type PostProps = {
 }
 
 const titleMap: { [slug: string]: string } = {
-    "leader-election": "Leader Election",
-    gossip: "Gossip Protocols",
+    chapter1: "The geometry of probability",
+    chapter2: "Infinite possible outcomes",
+    chapter3: "The gaussian distribution",
+    chapter4: "Inferential statistics",
 }
 
 const AlgorithmPage: NextPage<PostProps> = ({ source, slug }) => {
@@ -25,7 +27,7 @@ const AlgorithmPage: NextPage<PostProps> = ({ source, slug }) => {
 
 export async function getStaticProps({ params }: { params: any }) {
     const source: string = await fs.readFileSync(
-        "./resources/distributed-algorithms/" + params.slug + ".md",
+        "./resources/statistics/" + params.slug + ".md",
         "utf8"
     )
 
@@ -39,7 +41,7 @@ export async function getStaticProps({ params }: { params: any }) {
 
 export async function getStaticPaths() {
     const posts: string[] = []
-    fs.readdirSync("./resources/distributed-algorithms/").forEach((file) => {
+    fs.readdirSync("./resources/statistics/").forEach((file) => {
         posts.push(file.slice(0, file.length - 3))
     })
 

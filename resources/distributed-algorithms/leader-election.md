@@ -18,9 +18,9 @@ One issue that we have to solve is that a <dot class="blue"></dot> vote message 
 
 Before a node triggers a new election it increases its epoch by one, with this trick the nodes can have multiple election and vote in each election without risking that a delayed message is interpreted as a vote in the wrong election.
 
-{{leader-election}}
+{{distributed-algorithms.leader-election}}
 
-## Limitations
+# Limitations
 
 The nodes must know how many nodes there are in the network, otherwise they can't tell if they got a majority of the votes. If the communication between some nodes does not work then there may be 2 leaders at the same time (try to play around in the playground and see if you can get it to happen).  
 Both those issues are solved by more sophisticated algorithms.

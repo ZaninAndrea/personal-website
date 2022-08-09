@@ -20,13 +20,13 @@ const Header: FC = ({}) => {
             </div>
             <div className={styles.links}>
                 <Link href="/articles">
-                    <a className={styles.link}>Articles</a>
+                    <a className={styles.link}>ARTICLES</a>
                 </Link>
                 {/* <Link href="/deep-dives">
                     <a className={styles.link}>Deep dives</a>
                 </Link> */}
                 <Link href="/about-me">
-                    <a className={styles.link}>About me</a>
+                    <a className={styles.link}>ABOUT ME</a>
                 </Link>
             </div>
         </div>

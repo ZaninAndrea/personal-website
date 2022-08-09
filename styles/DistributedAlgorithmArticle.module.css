@@ -29,13 +29,6 @@
     background-color: var(--highlight-color);
 }
 
-.articleBody h1 {
-    font-size: 1.25em;
-    color: #494c51;
-    margin-bottom: -8px;
-    margin-top: 48px;
-}
-
 .articleBody img {
     border: 0;
 }

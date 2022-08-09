@@ -65,13 +65,9 @@ const Home: NextPage = ({ posts }: { posts?: any }) => {
                                 </Link>
                             </p>
                             <p className={styles.deepDive}>
-                                <a
-                                    href="https://statistics.baida.dev"
-                                    rel="noreferrer"
-                                    target="_blank"
-                                >
-                                    A Primer on Statistics
-                                </a>
+                                <Link href={`/statistics`}>
+                                    <a>A Primer on Statistics</a>
+                                </Link>
                             </p>
                             <p className={styles.deepDive}>
                                 <Link href="/chess-algorithms">

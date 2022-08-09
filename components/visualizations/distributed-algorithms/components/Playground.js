@@ -1,7 +1,7 @@
 import React from "react"
 import Graph from "./Graph"
 import cloneDeep from "clone-deep"
-import newNode from "./algorithms/election"
+import styles from "./Graph.module.css"
 
 function updateSimulation({ packets, nodes, edges }, timeInterval, getId) {
     let newNodes = cloneDeep(nodes)
@@ -132,9 +132,9 @@ class DistributedPlayground extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state.nodes = props.initialNodes
-        this.state.edges = props.initialEdges
-        this.state.packets = props.initialPackets
+        this.state.nodes = cloneDeep(props.initialNodes)
+        this.state.edges = cloneDeep(props.initialEdges)
+        this.state.packets = cloneDeep(props.initialPackets)
     }
 
     getId = () => this.counter++
@@ -157,7 +157,7 @@ class DistributedPlayground extends React.Component {
     render() {
         return (
             <div
-                className="distributed-playground"
+                className={styles.distributedPlayground}
                 style={{ height: this.props.height }}
             >
                 <Graph
@@ -171,9 +171,9 @@ class DistributedPlayground extends React.Component {
                     resetSimulation={() => {
                         this.resetId()
                         this.setState({
-                            nodes: this.props.initialNodes,
-                            edges: this.props.initialEdges,
-                            packets: this.props.initialPackets,
+                            nodes: cloneDeep(this.props.initialNodes),
+                            edges: cloneDeep(this.props.initialEdges),
+                            packets: cloneDeep(this.props.initialPackets),
                             playing: false,
                         })
                     }}

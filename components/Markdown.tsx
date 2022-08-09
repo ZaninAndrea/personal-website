@@ -5,19 +5,14 @@ import MarkdownKatex from "../lib/markdown-it-katex"
 import MarkdownMark from "markdown-it-mark"
 import MarkdownContainer from "markdown-it-container"
 import MarkdownHighlight from "markdown-it-highlightjs"
-// import HtmlToReact from "html-to-react"
-
-// const HtmlToReactParser = HtmlToReact.Parser()
-
-// const processNodeDefinitions = new HtmlToReact.ProcessNodeDefinitions(React)
-// const MarkdownComponents: any = {}
+import Visualizations from "./visualizations"
 
 type MarkdownProps = {
     source: string
     className?: string
 }
 
-const Markdown: FC<MarkdownProps> = ({ source, className }) => {
+const MarkdownBlock: FC<MarkdownProps> = ({ source }) => {
     const mdRendered = new MarkdownIt({
         html: true,
     })
@@ -47,51 +42,38 @@ const Markdown: FC<MarkdownProps> = ({ source, className }) => {
 
     var result = mdRendered.render(source)
 
-    // const processingInstructions = [
-    //     {
-    //         shouldProcessNode: (node: any) => {
-    //             return (
-    //                 node.name === "p" &&
-    //                 node.children.length === 1 &&
-    //                 node.children[0].name &&
-    //                 node.children[0].name.startsWith("react-")
-    //             )
-    //         },
-    //         processNode: (node: any, children: any) => {
-    //             const Component =
-    //                 MarkdownComponents[
-    //                     node.children[0].name.slice("react-".length)
-    //                 ]
+    return <div dangerouslySetInnerHTML={{ __html: result }}></div>
+}
 
-    //             return (
-    //                 <Component
-    //                     {...node.children[0].attribs}
-    //                     markdownChildren={node.children[0].children}
-    //                 />
-    //             )
-    //         },
-    //     },
-    //     {
-    //         shouldProcessNode: function (node: any) {
-    //             return true
-    //         },
-    //         processNode: processNodeDefinitions.processDefaultNode,
-    //     },
-    // ]
+const Markdown: FC<MarkdownProps> = ({ source, className }) => {
+    const renderedBlocks = []
+    let lastBlock = ""
+    for (let line of source.split("\n")) {
+        const blockMatched = line.trim().match(/^{{(.*)}}$/)
+        if (blockMatched) {
+            renderedBlocks.push(<MarkdownBlock source={lastBlock} />)
+            lastBlock = ""
 
-    // const reactMD = HtmlToReactParser.parseWithInstructions(
-    //     result,
-    //     () => true,
-    //     processingInstructions
-    // )
+            const Visualization = Visualizations[blockMatched[1]]
+            console.log(blockMatched[1])
+            renderedBlocks.push(<Visualization />)
+        } else {
+            lastBlock += "\n" + line
+        }
+    }
+
+    if (lastBlock !== "") {
+        renderedBlocks.push(<MarkdownBlock source={lastBlock} />)
+    }
 
     return (
         <div
             className={
                 className ? "markdown-body " + className : "markdown-body"
             }
-            dangerouslySetInnerHTML={{ __html: result }}
-        ></div>
+        >
+            {renderedBlocks}
+        </div>
     )
 }
 

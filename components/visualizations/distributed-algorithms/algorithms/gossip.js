@@ -1,3 +1,5 @@
+import styles from "../components/Graph.module.css"
+
 export default function newNode(
     position,
     getId,
@@ -35,7 +37,7 @@ export default function newNode(
                             <td key="label">Content</td>
                             <td key="value">
                                 <input
-                                    className="node-field"
+                                    className={styles["node-field"]}
                                     value={this.data.content}
                                     onChange={(e) => {
                                         this.data.content = e.target.value

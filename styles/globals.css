@@ -28,7 +28,7 @@ body {
     --green: rgb(106, 175, 83);
     --dark-green: #397300;
     --blue: #2688b9;
-    --gray: #aaa;
+    /* --gray: #aaa; */
 }
 
 code,
@@ -59,6 +59,15 @@ h3,
 h4,
 h5 {
     font-family: "Karla", sans-serif;
+}
+
+h1 {
+    font-size: 1.25em;
+    color: #494c51;
+
+    padding-top: 1em;
+    margin: 0;
+    margin-bottom: -0.2em;
 }
 
 a {
@@ -107,4 +116,18 @@ square.green {
 dot.blue,
 square.blue {
     background: var(--blue);
+}
+
+label.label-highlighted {
+    color: var(--primary-color);
+    border-bottom: 2px dotted var(--primary-color);
+}
+label {
+    border-bottom: 2px dotted var(--text-color);
+    text-decoration: none;
+}
+
+label.label-highlighted.secondary {
+    color: var(--blue);
+    border-bottom: 2px dotted var(--blue);
 }
