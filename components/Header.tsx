@@ -3,7 +3,10 @@ import Link from "next/link"
 import Image from "next/image"
 import type { FC } from "react"
 
-const Header: FC = ({}) => {
+const Header: FC<{ titleName?: string; titleLink?: string }> = ({
+    titleName,
+    titleLink,
+}) => {
     return (
         <div className={styles.container}>
             <div className={styles.logo}>
@@ -18,6 +21,13 @@ const Header: FC = ({}) => {
                     />
                 </Link>
             </div>
+            {titleLink && (
+                <div className={styles.title}>
+                    <Link href={titleLink}>
+                        <a>{titleName}</a>
+                    </Link>
+                </div>
+            )}
             <div className={styles.links}>
                 <Link href="/articles">
                     <a className={styles.link}>ARTICLES</a>

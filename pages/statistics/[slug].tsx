@@ -18,7 +18,11 @@ const titleMap: { [slug: string]: string } = {
 
 const AlgorithmPage: NextPage<PostProps> = ({ source, slug }) => {
     return (
-        <PageLayout title={"Baida | " + titleMap[slug]}>
+        <PageLayout
+            title={"Baida | " + titleMap[slug]}
+            headerTitle="A Primer on Statistics"
+            headerTitleURL="/statistics"
+        >
             <h1 className={styles.articleTitle}>{titleMap[slug]}</h1>
             <Markdown source={source} className={styles.articleBody} />
         </PageLayout>

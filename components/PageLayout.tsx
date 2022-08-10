@@ -7,9 +7,16 @@ import Script from "next/script"
 
 type PageLayoutProps = PropsWithChildren<{
     title: string
+    headerTitle?: string
+    headerTitleURL?: string
 }>
 
-const PageLayout: FC<PageLayoutProps> = ({ children, title }) => {
+const PageLayout: FC<PageLayoutProps> = ({
+    children,
+    title,
+    headerTitleURL,
+    headerTitle,
+}) => {
     return (
         <div className={styles.container}>
             <Head>
@@ -32,7 +39,7 @@ const PageLayout: FC<PageLayoutProps> = ({ children, title }) => {
 
                 gtag('config', 'G-E16B5L01EZ');`}
             </Script>
-            <Header />
+            <Header titleName={headerTitle} titleLink={headerTitleURL} />
 
             <main className={styles.main}>{children}</main>
         </div>
