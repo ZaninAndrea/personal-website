@@ -24,15 +24,39 @@ const Home: NextPage = () => {
                     understanding while ignoring some of the rigorous theory.
                 </p>
             </div>
-            <div className={styles.postList}>
-                {posts.map((post: any) => (
-                    <p key={post.slug} className={styles.post}>
-                        <Link href={`/distributed-algorithms/${post.slug}`}>
-                            <a className={styles.postTitle}>{post.title}</a>
-                        </Link>
-                    </p>
-                ))}
-            </div>
+
+            <table className={styles.contentList}>
+                <colgroup>
+                    <col style={{ width: "140px" }} />
+                    <col style={{ width: "auto" }} />
+                </colgroup>
+                <tbody>
+                    <tr className={styles.header}>
+                        <td className={styles.headerTitle}>EXPLORATIONS</td>
+                        <td className={styles.headerLine}>
+                            <span></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div className={styles.posts}>
+                                {posts.map((post: any) => (
+                                    <p key={post.slug} className={styles.post}>
+                                        <Link
+                                            href={`/distributed-algorithms/${post.slug}`}
+                                        >
+                                            <a className={styles.postTitle}>
+                                                {post.title}
+                                            </a>
+                                        </Link>
+                                    </p>
+                                ))}
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </PageLayout>
     )
 }

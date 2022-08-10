@@ -65,17 +65,17 @@
 }
 
 .contentList {
-    max-width: 985px;
+    max-width: 940px;
     width: 100%;
     margin: auto;
     margin-top: 32px;
-    margin-left: calc(50vw - 575px);
+    margin-left: calc(50vw - 530px);
     table-layout: fixed;
     padding: 0 24px;
     margin-bottom: 48px;
 }
 
-@media only screen and (max-width: 1120px) {
+@media only screen and (max-width: 1035px) {
     .contentList {
         margin-left: auto;
         max-width: 800px;
@@ -84,6 +84,6 @@
         text-align: left;
     }
     .post {
-        margin-left: -140px;
+        margin-left: -95px;
     }
 }
