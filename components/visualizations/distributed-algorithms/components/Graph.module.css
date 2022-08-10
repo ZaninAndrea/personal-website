@@ -3,7 +3,7 @@
     font-size: 16px;
     line-height: 34px;
     word-wrap: break-word;
-    padding: 16px 24px 4px 24px;
+    padding: 16px 24px 0 24px;
     color: var(--text-color);
     margin: auto;
     font-family: "Karla", sans-serif;
@@ -71,9 +71,9 @@
 
 .graph-node-body {
     position: relative;
-    border: 2px solid black;
+    border: 2px solid var(--text-color);
     border-radius: 8px;
-    background: white;
+    background: var(--background-color);
     transform: translateY(-50%) translateX(-50%);
     user-select: none;
     width: 198px;
@@ -99,7 +99,7 @@
 }
 
 .graph-node-title {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--text-color);
     text-align: center;
     padding: 4px;
 }
@@ -113,8 +113,10 @@
 input.node-field {
     width: 80px;
     border: none;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid var(--gray);
     border-radius: 0;
+    background: var(--background-color);
+    color: var(--text-color);
 }
 input.node-field:focus {
     outline: none;

@@ -24,10 +24,10 @@ export default function GossipPush() {
     }
     const initialNodes = [
         newGossipNode({ x: 110, y: 80 }, getId, "New", 1),
-        newGossipNode({ x: 430, y: 80 }, getId, "Old", 0),
-        newGossipNode({ x: 430, y: 500 }, getId, "Old", 0),
+        newGossipNode({ x: 400, y: 80 }, getId, "Old", 0),
+        newGossipNode({ x: 400, y: 500 }, getId, "Old", 0),
         newGossipNode({ x: 110, y: 500 }, getId, "Old", 0),
-        newGossipNode({ x: 650, y: 290 }, getId, "Old", 0),
+        newGossipNode({ x: 590, y: 290 }, getId, "Old", 0),
     ]
     return (
         <DistributedPlayground
@@ -36,7 +36,7 @@ export default function GossipPush() {
                 return "init-" + counter++
             })}
             initialPackets={[]}
-            height={"700px"}
+            height={"650px"}
         />
     )
 }

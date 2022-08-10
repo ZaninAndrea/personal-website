@@ -1,6 +1,6 @@
 .container {
     height: 80px;
-    background: white;
+    background: var(--background-color);
     display: grid;
     grid-template-columns: 64px 1fr auto;
     grid-template-areas: "logo title links";
@@ -33,6 +33,7 @@
 .links {
     grid-area: links;
     text-align: right;
+    margin-right: 16px;
 }
 
 .link {
@@ -57,7 +58,7 @@
 
     .container {
         height: 64px;
-        background: white;
+        background: var(--background-color);
         display: grid;
         grid-template-columns: 48px 1fr auto;
         grid-template-areas: "logo title links";

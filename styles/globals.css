@@ -4,6 +4,7 @@
 
 html,
 body {
+    min-height: 100vh;
     padding: 0;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -15,20 +16,24 @@ body {
     --primary-color: #cc304c;
     --gray: #85828c;
     --text-color: rgb(0, 17, 26);
-
-    /* --red: #98253a;
-    --orange: #e3744b;
-    --green: #c6ecae;
-    --dark-green: #777da7;
-    --blue: #477998;
-    --light-blue: #a8d0db; */
-
+    --light-text-color: #494c51;
+    --background-color: white;
     --red: #800;
     --orange: #ab5656;
     --green: rgb(106, 175, 83);
     --dark-green: #397300;
     --blue: #2688b9;
-    /* --gray: #aaa; */
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --background-color: #222;
+        --text-color: white;
+        --light-text-color: #b3afbd;
+    }
 }
 
 code,
@@ -63,7 +68,7 @@ h5 {
 
 h1 {
     font-size: 1.25em;
-    color: #494c51;
+    color: var(--light-text-color);
 
     padding-top: 1em;
     margin: 0;

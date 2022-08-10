@@ -24,10 +24,10 @@ export default function LeaderElection() {
     }
     const initialNodes = [
         newLeaderElectionNode({ x: 110, y: 80 }, getId),
-        newLeaderElectionNode({ x: 430, y: 80 }, getId),
-        newLeaderElectionNode({ x: 430, y: 500 }, getId),
+        newLeaderElectionNode({ x: 400, y: 80 }, getId),
+        newLeaderElectionNode({ x: 400, y: 500 }, getId),
         newLeaderElectionNode({ x: 110, y: 500 }, getId),
-        newLeaderElectionNode({ x: 650, y: 290 }, getId),
+        newLeaderElectionNode({ x: 590, y: 290 }, getId),
     ]
     return (
         <DistributedPlayground
@@ -36,7 +36,7 @@ export default function LeaderElection() {
                 return "init-" + counter++
             })}
             initialPackets={[]}
-            height={"700px"}
+            height={"650px"}
         />
     )
 }

@@ -9,7 +9,7 @@
 }
 .sideProjectsList h1 {
     font-size: 1.5em;
-    color: #494c51;
+    color: var(--light-text-color);
     margin-top: 48px;
 }
 

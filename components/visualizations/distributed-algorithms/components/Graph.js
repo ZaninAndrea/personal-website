@@ -33,7 +33,7 @@ export default class Graph extends React.Component {
                             onClick={() =>
                                 this.setState({ tutorialOpen: false })
                             }
-                            sx={{ color: "black" }}
+                            sx={{ color: "var(--text-color)" }}
                             title="Close"
                             key="close-button"
                         >
@@ -108,7 +108,7 @@ export default class Graph extends React.Component {
                         <IconButton
                             aria-label="playpause"
                             onClick={this.props.onTogglePlaying}
-                            sx={{ color: "black" }}
+                            sx={{ color: "var(--text-color)" }}
                             title={this.props.playing ? "Pause" : "Start"}
                         >
                             {this.props.playing ? (
@@ -120,7 +120,7 @@ export default class Graph extends React.Component {
                         <IconButton
                             aria-label="refresh"
                             onClick={() => this.props.resetSimulation()}
-                            sx={{ color: "black" }}
+                            sx={{ color: "var(--text-color)" }}
                             title="Reset"
                         >
                             <RefreshIcon />
@@ -130,7 +130,7 @@ export default class Graph extends React.Component {
                             onClick={() =>
                                 this.setState({ tutorialOpen: true })
                             }
-                            sx={{ color: "black" }}
+                            sx={{ color: "var(--text-color)" }}
                             title="Tutorial"
                         >
                             <HelpIcon />
@@ -144,7 +144,7 @@ export default class Graph extends React.Component {
                                 color:
                                     this.state.activeTool === "pan"
                                         ? "var(--primary-color)"
-                                        : "black",
+                                        : "var(--text-color)",
                             }}
                             onClick={() => this.setState({ activeTool: "pan" })}
                         >
@@ -157,7 +157,7 @@ export default class Graph extends React.Component {
                                 color:
                                     this.state.activeTool === "add"
                                         ? "var(--primary-color)"
-                                        : "black",
+                                        : "var(--text-color)",
                             }}
                             onClick={() =>
                                 this.setState({
@@ -175,7 +175,7 @@ export default class Graph extends React.Component {
                                 color:
                                     this.state.activeTool === "delete"
                                         ? "var(--primary-color)"
-                                        : "black",
+                                        : "var(--text-color)",
                             }}
                             onClick={() =>
                                 this.setState({ activeTool: "delete" })
@@ -344,7 +344,7 @@ export default class Graph extends React.Component {
                                     y1={nodeMap[this.state.sourceNode].y}
                                     x2={this.state.mouseX}
                                     y2={this.state.mouseY}
-                                    stroke="black"
+                                    stroke="var(--text-color)"
                                     strokeWidth="2px"
                                     key={"drag-line"}
                                 />
@@ -373,7 +373,7 @@ export default class Graph extends React.Component {
                                         y1={nodeMap[edge.source].y}
                                         x2={nodeMap[edge.target].x}
                                         y2={nodeMap[edge.target].y}
-                                        stroke="black"
+                                        stroke="var(--text-color)"
                                         strokeWidth="2px"
                                         key={edge.id}
                                     />
