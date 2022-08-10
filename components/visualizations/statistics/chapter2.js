@@ -220,11 +220,13 @@ class Image2 extends React.Component {
                             y="47"
                             width="1"
                             height="5"
+                            fill="var(--text-color)"
                         ></rect>
                         <text
                             x={normCDF(i, 0, 5) * 300 - 410}
                             y="60"
                             fontSize="8"
+                            fill="var(--text-color)"
                         >
                             {170 + i * 5} cm
                         </text>
@@ -242,8 +244,19 @@ class Image2 extends React.Component {
                 />
                 {[0, 2, 4, 6, 8, 10].map((i) => (
                     <>
-                        <rect x={i * 30 - 1} y="47" width="1" height="5"></rect>
-                        <text x={i * 30 - 10} y="60" fontSize="8">
+                        <rect
+                            x={i * 30 - 1}
+                            y="47"
+                            width="1"
+                            height="5"
+                            fill="var(--text-color)"
+                        ></rect>
+                        <text
+                            x={i * 30 - 10}
+                            y="60"
+                            fontSize="8"
+                            fill="var(--text-color)"
+                        >
                             {120 + i * 10} cm
                         </text>
                     </>
@@ -656,6 +669,7 @@ class Playground2 extends React.Component {
                         textAnchor="middle"
                         fontSize="7"
                         fontFamily={`"Open Sans", Arial, sans-serif`}
+                        fill="var(--text-color)"
                     >
                         Heads percentage after N coin tosses
                     </text>

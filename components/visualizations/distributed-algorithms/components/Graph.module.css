@@ -112,12 +112,4 @@
 
 input.node-field {
     width: 80px;
-    border: none;
-    border-bottom: 1px solid var(--gray);
-    border-radius: 0;
-    background: var(--background-color);
-    color: var(--text-color);
-}
-input.node-field:focus {
-    outline: none;
 }

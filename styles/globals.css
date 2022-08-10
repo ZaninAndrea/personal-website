@@ -36,6 +36,32 @@ body {
     }
 }
 
+input {
+    border: none;
+    border-bottom: 1px solid var(--gray);
+    border-radius: 0;
+    background: var(--background-color);
+    color: var(--text-color);
+}
+input:focus {
+    outline: none;
+}
+
+button:not(.MuiButtonBase-root) {
+    border: 1px solid var(--gray);
+    background: none;
+    color: var(--text-color);
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    user-select: none;
+}
+button:hover:not(.MuiButtonBase-root) {
+    color: white;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
 code,
 pre {
     font-family: "Space Mono", monospace;
