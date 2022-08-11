@@ -60,7 +60,7 @@ Unfortunately in this case we don't have a simple rule: in other cases the null 
 
 You may argue that the hypotesis test we've seen only works because the sample is normally distributed and that's not always true, so what do we do in such cases? We use the Central Limit Theorem.
 
-Suppose we have a complex reaction between two chemical agents and we know that it has a certain probability to succed, we know from similar reactions that it should be less than 5%, but we want to verify this empirically; the sample for our hypotesis test are 50 reactions and we will reject the null hypotesis (failure chance <5%) if 3 or more reactions succed. What is the significance level of this test?
+Suppose we have a complex reaction between two chemical agents and we know that it has a certain probability to succed, we know from similar reactions that it should be less than 5%, but we want to verify this empirically; we have data about 50 reactions and we want to build a hypothesis test.
 
 In this case the random variables $X_i$ representing each reaction can only have 2 values: 1 for successful reaction and 0 for failed reaction, this definitely isn't a normally distributed variable, but we'll see that we can leverage the Central Limit Theorem (CLT) to still be dealing with a normal distribution in the hypotesis test. The first step to apply the CLT is knowing the average and the variance of the random variables, so let's compute them.
 
@@ -100,13 +100,13 @@ $$
 \alpha = \mathbb{P}[\bar X_n > 0.1\mid p = 0.05]
 $$
 
-The distribution of $\bar X_n$ is quite hard to deal with, so we use the Central Limit Theorem (CLT) to make a normal distribution appear: from the CLT we know that $Z_n={\bar X_n - \mu \over \sqrt{\sigma^2/n}}$ tends to a normal distribution, since $n$ is quite big (the rule of thumb is $n>30$) we can approximate the distribution of $Z$ to the limit distribution, that is $\text{N}(0,1)$. Notice that in the definition of $Z_n$ we use $\mu$ and $\sigma^2$, those are the expect value and variance of the variables $X_i$ that we have computed before: $\mu=p$ and $\sigma^2=p(1-p)$, furthermore in our case $n=50$, so we have $Z_{50} = {\bar X_n - p\over \sqrt{p(1-p)/50}}$.  
-Now we just need to rewrite the expression for $\alpha$ with respect to $Z_50$:
+The distribution of $\bar X_n$ is quite hard to deal with, so we use the Central Limit Theorem (CLT) to make a normal distribution appear: from the CLT we know that $Z_n={\bar X_n - \mu \over \sqrt{\sigma^2/n}}$ tends to a normal distribution, since $n$ is quite big (the rule of thumb is $n>30$) we can approximate the distribution of $Z$ to the limit distribution, that is $\text{N}(0,1)$. Notice that in the definition of $Z_n$ we use $\mu$ and $\sigma^2$, those are the expected value and variance of the variables $X_i$ that we have computed before: $\mu=p$ and $\sigma^2=p(1-p)$, furthermore in our case $n=50$, so we have $Z_{50} = {\bar X_n - p\over \sqrt{p(1-p)/50}}$.  
+Now we just need to rewrite the expression for $\alpha$ with respect to $Z_{50}$:
 
 $$
 \begin{aligned}
 \alpha &= \mathbb{P}[\bar X_n > 0.1\mid p = 0.05]\\
-&=\mathbb{P}\left[\bar {X_n-p\over \sqrt{p(1-p)/50}} > {0.1-p\over\sqrt{p(1-p)/50}}\Bigm\vert p=0.05\right]\\
+&=\mathbb{P}\left[{{\bar X}_n-p\over \sqrt{p(1-p)/50}} > {0.1-p\over\sqrt{p(1-p)/50}}\Bigm\vert p=0.05\right]\\
 &=\mathbb{P}\left[Z_{50} > {0.1-0.05\over\sqrt{ 0.05(1-0.05)/50}}\right]\\
 &=\mathbb{P}[Z_{50}>0.64]
 \end{aligned}

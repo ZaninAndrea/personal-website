@@ -73,3 +73,8 @@
         display: none;
     }
 }
+@media only print {
+    .title {
+        display: none;
+    }
+}
