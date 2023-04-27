@@ -125,5 +125,10 @@ export async function getSideProjects(): Promise<SideProject[]> {
   }
 `)
 
-    return data.projects
+  return data.projects.sort((a:SideProject, b:SideProject) => {
+    if (b.starred && !a.starred) return 1
+    if (a.starred && !b.starred) return -1
+
+    return (+new Date(b.date)) - (+new Date(a.date))
+    })
 }
