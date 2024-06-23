@@ -1,4 +1,4 @@
-Probability is a brach of mathematics concerned with formalising a concept that we intuitively understand: in everyday life we use phrases like "It's likely to rain today" or "You have 1 in 6 chances of rolling 6 if the dice is fair". One of the marvellous characteristics of probability theory is that it never says what "choosing at random" means, it instead reformulates every statement about probability in terms of geometry.
+Probability is a brach of mathematics concerned with formalizing a concept that we intuitively understand: in everyday life we use phrases like "It's likely to rain today" or "You have 1 in 6 chances of rolling 6 if the dice is fair". One of the marvelous characteristics of probability theory is that it never says what "choosing at random" means, it instead reformulates every statement about probability in terms of geometry.
 
 For example the phrase "You have 1 in 6 chances of rolling 6 if the dice is fair" can be reformulated as follows:
 
@@ -8,7 +8,7 @@ For example the phrase "You have 1 in 6 chances of rolling 6 if the dice is fair
 
 {{statistics-chapter1-image1}}
 
-The key insight is that the events that we are considering (e.g. rolling a 6, rolling an even number, ...) are represented as areas inside a space of our choice and the probability of that event is its area divided by the area of the even space. The structure that we defined by choosing an event space and the areas corresponding to each event is called **probability space**.
+The key insight is that the events that we are considering (e.g. rolling a 6, rolling an even number, ...) are represented as areas inside a space of our choice and the probability of that event is its area divided by the area of the event space. The structure that we defined by choosing an event space and the areas corresponding to each event is called **probability space**.
 
 Within this framework we can calculate other probabilities, for example the probability of rolling an even number: to do so we just need to compute the <label id="label-even-squares">area corresponding to that event</label>, this is simply 3 and so the probability is 3/6=50%.
 
@@ -85,7 +85,7 @@ One real-life application of Bayes' theorem is understanding the result of medic
 
 Consider for example a city with a population of 1.000.000 of which 1.000 have contracted a particular disease. We have a test for the disease that has 99% accuracy, if John tests positive what is the probability of John being sick?
 
-The intuitive answer is 99%, but as we'll see this is wrong because we are confusing $\mathbb{P}_B(A)$ with $\mathbb{P}_A(B)$. Let's rewrite the informations in a more formal way: for starters we know that $\mathbb{P}(\text{sick})=1.000.000/1.000 = 0.1\%$, this comes from the fact that 1.000 out of 1.000.000 people have the disease.
+The intuitive answer is 99%, but as we'll see this is wrong because we are confusing $\mathbb{P}_B(A)$ with $\mathbb{P}_A(B)$. Let's rewrite the information in a more formal way: for starters we know that $\mathbb{P}(\text{sick})=1.000.000/1.000 = 0.1\%$, this comes from the fact that 1.000 out of 1.000.000 people have the disease.
 The trickier part is the 99% test-accuracy, this means that if you are sick there is 99% probability that the test will be positive and if you aren't sick then you have a 99% probability of being negative, so more formally: $\mathbb{P}_\text{sick}(\text{positive})=99\%$ and $\mathbb{P}_\text{not sick}(\text{negative})=1\%$.
 
 Notice that $\mathbb{P}_\text{not sick}(\text{positive})=1-\mathbb{P}_\text{not sick}(\text{negative})=1-99\%=1\%$, so by applying the law of total probability we get
