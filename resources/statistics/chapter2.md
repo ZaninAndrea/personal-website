@@ -2,14 +2,14 @@ In the previous chapter we saw how a geometric approach can help us formalize ou
 
 A typical example of probability statement in this context could be "30% of the adult population is taller than 1.85cm"; it's clear that there are infinite possible heights (any number between 0m and 2.50m), so how can we represent this in our geometrical model? And how can we compute the probability of any event?
 
-The key insight is that instead of talking about probability of having a specific height we talk about probability of being taller than or shorter than a specific height; indeed it's pretty straightforward that the probability of being exactly 1.80m tall down, not one atom more not one atom less, is 0% because it's one height among infinite possible heights.
+The key insight is that instead of talking about probability of having a specific height we talk about probability of being taller than or shorter than a specific height; indeed it's pretty straightforward that the probability of being exactly 1.80m, not one atom more not one atom less, is 0% because it's one height among infinite possible heights.
 This time in our usual rectangle we'll have overlapping regions representing the possible statements we are interested in and we'll have an infinite number of such regions.
 
 {{statistics-chapter2-image1}}
 
 We can still use the rules we introduced in the previous chapter, for example if we want to compute the probability of <label id="label-160">someone being taller than 1.60m</label> knowing that <label id="label-180" class="secondary">they are shorter than 1.80m</label> we can follow the usual construction for the conditional probability.
 
-The cases where we have infinite possible outcomes are called **continuous probability distributions**. Since the probability of any specific outcome is $0$ we usually characterize them with a **cumulative distribution function** $F_X(x)=\mathbb{P}(X\le x)$, meaning that the value we are interested in (e.g. the height) is less or equal to a given numerical value (e.g. 1.80m).
+The cases where we have infinite possible outcomes are called **continuous probability distributions**. Since the probability of any specific outcome is $0$ we usually characterize them with a **cumulative distribution function** $F_X(x)=\mathbb{P}(X\le x)$, meaning that the value we are interested in (e.g. the height) is less than or equal to a given numerical value (e.g. 1.80m).
 
 Notice that we may well define a cumulative distribution function for a discrete probability distribution, and indeed it's often useful to do so, for example when we want to compare discrete and continuous probability distributions.
 
@@ -20,9 +20,11 @@ To do this we can modify our geometric representation a bit: instead of represen
 
 {{statistics-chapter2-image2}}
 
-The key difference is that the marks representing each height are now evenly spaced and we can judge the relative likelihoods just by looking at the y value of the curve at each height we are interested in: greater y values mean that it's likelier to be around that value. The function that represents the curve is called **probability density function** and we usually write it as $f_X(x)$.
+The key difference is that the marks representing each height are now evenly spaced and we can judge the relative likelihoods just by looking at the y value of the curve at each height we are interested in: greater y values mean that it's likelier to be around that value.
+Furthermore by convention the area of the whole event space is $1$, in this way we don't need to divide by the area of the event space when computing probabilities.
+The function that represents the curve is called **probability density function** and we usually write it as $f_X(x)$.
 
-Another very useful characteristic of introducing the probability density function is that it helps us to compute specific probabilities: we know that the probability of an event is the area of the region representing that event divided by the area of the whole event space, both these areas are the areas under the curve between two given points and if you studied calculus you'll know that it can be computed as an integral. For example the probability of being between 1.60m and 1.80m can be calculated as:
+Another very useful characteristic of introducing the probability density function is that it helps us to compute specific probabilities: we know that the probability of an event is the area of the region representing that event (because we are using the convention that the even space has area $1$), that is the area under the curve between two given points and if you studied calculus you'll know that it can be computed as an integral. For example the probability of being between 1.60m and 1.80m can be calculated as:
 
 $$\mathbb{P}(1.60\le X\le 1.80)=\int_{1.60}^{1.80}f_X(x)\;dx$$
 

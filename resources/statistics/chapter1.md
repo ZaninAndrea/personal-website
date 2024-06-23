@@ -35,7 +35,7 @@ The event <label id="label-even-roll3">"dice roll is even"</label> has a <label 
 
 The geometric interpretation of probability is what allows us to talk about probability without being caught in a cyclical argument trying to define what "choosing at random" means, but phrasing everything in spelled out sentences isn't very practical and will be unsustainable when we'll tackle harder topics, thus we need to introduce a more compact way to talk about probability.
 
-The key concept here is introducing the **probability measure**, this is simply a function that maps each event to it's area divided by the area of the event space, the probability measure symbol is $\mathbb{P}$. For example if we call $\text{D1}$ the even of rolling a 1 then the probability of rolling a 1 is $\mathbb{P}(\text{D1})$.
+The key concept here is introducing the **probability measure**, this is simply a function that maps each event to it's area divided by the area of the event space, the probability measure symbol is $\mathbb{P}$. For example if we call $\text{D1}$ the event of rolling a 1 then the probability of rolling a 1 is $\mathbb{P}(\text{D1})$.
 
 The conditional probability of event $A$ having happened knowing that $B$ has happened is written as $\mathbb{P}_B(A)$ and the whole process we went through in the previous sections to compute it can be summarised in this succinct formula:
 
@@ -85,7 +85,7 @@ One real-life application of Bayes' theorem is understanding the result of medic
 
 Consider for example a city with a population of 1.000.000 of which 1.000 have contracted a particular disease. We have a test for the disease that has 99% accuracy, if John tests positive what is the probability of John being sick?
 
-The intuitive answer is 99%, but as we'll see this is wrong because we are confusing $\mathbb{P}_B(A)$ with $\mathbb{P}_A(B)$. Let's rewrite the information in a more formal way: for starters we know that $\mathbb{P}(\text{sick})=1.000.000/1.000 = 0.1\%$, this comes from the fact that 1.000 out of 1.000.000 people have the disease.
+The intuitive answer is 99%, but as we'll see this is wrong because we are confusing $\mathbb{P}_B(A)$ with $\mathbb{P}_A(B)$. Let's rewrite the information in a more formal way: we know that $\mathbb{P}(\text{sick})=1.000.000/1.000 = 0.1\%$, this comes from the fact that 1.000 out of 1.000.000 people have the disease.
 The trickier part is the 99% test-accuracy, this means that if you are sick there is 99% probability that the test will be positive and if you aren't sick then you have a 99% probability of being negative, so more formally: $\mathbb{P}_\text{sick}(\text{positive})=99\%$ and $\mathbb{P}_\text{not sick}(\text{negative})=1\%$.
 
 Notice that $\mathbb{P}_\text{not sick}(\text{positive})=1-\mathbb{P}_\text{not sick}(\text{negative})=1-99\%=1\%$, so by applying the law of total probability we get
